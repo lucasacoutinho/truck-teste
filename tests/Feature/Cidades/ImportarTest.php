@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Http;
 class ImportarTest extends TestCase
 {
     private const ESTADO = 'MG';
+    private const ESTADO_INEXISTENTE = 'CC';
 
     public function test_cidades_sao_importadas_com_sucesso()
     {
@@ -25,7 +26,35 @@ class ImportarTest extends TestCase
         ]);
     }
 
-    public function test_cidades_nao_sao_importadas_falha_requisicao()
+    public function test_cidades_nao_sao_importadas_estado_nao_encontrado()
+    {
+        $this->artisan('cidades:importar', ['estado' => self::ESTADO_INEXISTENTE])
+            ->expectsOutput('Erro ao importar cidades do estado '. self::ESTADO_INEXISTENTE)
+            ->assertFailed();
+
+        $this->assertDatabaseMissing('cidades', [
+            'nome'           => 'Acaiaca',
+            'ibge_cidade_id' => 3100401,
+            'ibge_estado_id' => 31
+        ]);
+    }
+
+    public function test_cidades_nao_sao_importadas_falha_requisicao_estados()
+    {
+        Http::fake([IbgeEndpoints::IBGE_UF => Http::timeout(0)]);
+
+        $this->artisan('cidades:importar', ['estado' => self::ESTADO])
+            ->expectsOutput('Erro ao importar cidades do estado '. self::ESTADO)
+            ->assertFailed();
+
+        $this->assertDatabaseMissing('cidades', [
+            'nome'           => 'Acaiaca',
+            'ibge_cidade_id' => 3100401,
+            'ibge_estado_id' => 31
+        ]);
+    }
+
+    public function test_cidades_nao_sao_importadas_falha_requisicao_cidades_estados()
     {
         Http::fake([IbgeEndpoints::IBGE_CIDADES_UF => Http::timeout(0)]);
 
