@@ -23,9 +23,13 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Domain\\": "domain/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "domain/Estado/_helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
