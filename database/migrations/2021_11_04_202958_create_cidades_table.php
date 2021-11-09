@@ -15,8 +15,7 @@ class CreateCidadesTable extends Migration
             $table->unsignedBigInteger('ibge_cidade_id');
             $table->unsignedBigInteger('ibge_estado_id');
             $table->timestamps();
-            $table->softDeletes();
-
+            
             $table->unique(['ibge_cidade_id', 'ibge_estado_id']);
         });
     }
