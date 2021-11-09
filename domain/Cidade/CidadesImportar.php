@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\Cidades;
+namespace Domain\Cidade;
 
 use App\Models\Cidade;
 use Illuminate\Support\Str;

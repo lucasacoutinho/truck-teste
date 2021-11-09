@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests\Feature\Cidades;
+namespace Tests\Feature\Cidade;
 
 use Tests\TestCase;
 use Domain\Ibge\IbgeEndpoints;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
 class ImportarTest extends TestCase

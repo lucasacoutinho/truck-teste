@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Console\Commands\Cidades;
+namespace App\Console\Commands\Cidade;
 
 use Throwable;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
-use Domain\Cidades\CidadesImportar;
+use Domain\Cidade\CidadesImportar;
 use Illuminate\Support\Facades\Log;
 
 class Importar extends Command
