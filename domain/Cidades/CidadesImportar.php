@@ -17,6 +17,7 @@ class CidadesImportar
             foreach ($cidades as $cidade) {
                 Cidade::create([
                     'nome'           => $cidade['nome'],
+                    'estado_sigla'   => $cidade['microrregiao']['mesorregiao']['UF']['sigla'],
                     'ibge_cidade_id' => $cidade['id'],
                     'ibge_estado_id' => $codigoEstado,
                 ]);

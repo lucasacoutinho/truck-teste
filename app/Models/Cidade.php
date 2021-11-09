@@ -15,6 +15,7 @@ class Cidade extends Model
 
     protected $fillable = [
         'nome',
+        'estado_sigla',
         'ibge_cidade_id',
         'ibge_estado_id'
     ];

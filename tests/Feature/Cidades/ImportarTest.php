@@ -21,6 +21,7 @@ class ImportarTest extends TestCase
 
         $this->assertDatabaseHas('cidades', [
             'nome'           => 'Acaiaca',
+            'estado_sigla'   => 'MG',
             'ibge_cidade_id' => 3100401,
             'ibge_estado_id' => 31
         ]);
@@ -34,6 +35,7 @@ class ImportarTest extends TestCase
 
         $this->assertDatabaseMissing('cidades', [
             'nome'           => 'Acaiaca',
+            'estado_sigla'   => 'MG',
             'ibge_cidade_id' => 3100401,
             'ibge_estado_id' => 31
         ]);
@@ -49,6 +51,7 @@ class ImportarTest extends TestCase
 
         $this->assertDatabaseMissing('cidades', [
             'nome'           => 'Acaiaca',
+            'estado_sigla'   => 'MG',
             'ibge_cidade_id' => 3100401,
             'ibge_estado_id' => 31
         ]);
@@ -64,6 +67,7 @@ class ImportarTest extends TestCase
 
         $this->assertDatabaseMissing('cidades', [
             'nome'           => 'Acaiaca',
+            'estado_sigla'   => 'MG',
             'ibge_cidade_id' => 3100401,
             'ibge_estado_id' => 31
         ]);
@@ -78,6 +82,7 @@ class ImportarTest extends TestCase
 
         $this->assertDatabaseHas('cidades', [
             'nome'           => 'Acaiaca',
+            'estado_sigla'   => 'MG',
             'ibge_cidade_id' => 3100401,
             'ibge_estado_id' => 31
         ]);
