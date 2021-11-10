@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "logradouro": "Versiani Andrade Alvares",
+            "numero": "71",
+            "bairro": "Ferreira",
+            "cidade_id": 6,
+            "created_at": "2021-11-10T05:58:42.000000Z",
+            "updated_at": "2021-11-10T06:04:14.000000Z"
+        },
+        {
+            "id": 2,
+            "logradouro": "Francisco Veritas José",
+            "numero": "555",
+            "bairro": "Candida Camara",
+            "cidade_id": 2,
+            "created_at": "2021-11-10T05:59:43.000000Z",
+            "updated_at": "2021-11-10T05:59:43.000000Z"
+        },
+        {
+            "id": 3,
+            "logradouro": "Viera Tavares José",
+            "numero": "555",
+            "bairro": "Alto São João",
+            "cidade_id": 5,
+            "created_at": "2021-11-10T06:00:33.000000Z",
+            "updated_at": "2021-11-10T06:00:33.000000Z"
+        }
+    ]
+}

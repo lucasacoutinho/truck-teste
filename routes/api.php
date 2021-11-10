@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Cidade\CidadeController;
+use App\Http\Controllers\Endereco\EnderecoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,5 @@ use App\Http\Controllers\Cidade\CidadeController;
 |
 */
 
-Route::resource('cidades', CidadeController::class)->only(['index']);
+Route::apiResource('cidades', CidadeController::class)->only(['index']);
+Route::apiResource('enderecos', EnderecoController::class)->parameters(['enderecos' => 'endereco']);
