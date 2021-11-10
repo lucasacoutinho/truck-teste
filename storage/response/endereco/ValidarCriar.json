@@ -1,0 +1,26 @@
+{
+    "message": "The given data was invalid.",
+    "errors": {
+        "logradouro": [
+            "The logradouro field is required.",
+            "The logradouro must be a string.",
+            "The logradouro must not be greater than 191 characters."
+        ],
+        "numero": [
+            "The numero field is required.",
+            "The numero must be a string.",
+            "The numero must not be greater than 191 characters."
+        ],
+        "bairro": [
+            "The bairro field is required.",
+            "The bairro must be a string.",
+            "The bairro must not be greater than 191 characters."
+        ],
+        "cidade_id": [
+            "The selected cidade id is invalid.",
+            "The cidade id must be an integer.",
+            "The cidade id must be at least 1.",
+            "The cidade id field is required."
+        ]
+    }
+}
