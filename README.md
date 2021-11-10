@@ -13,7 +13,7 @@ composer install
 ```
 2. Renomear o arquivo `.env.example` para `.env` no diretório raiz do projeto
 ```
-cp .example.env .env
+cp .env.example .env
 ```
 3. Gerar uma chave para a aplicação laravel
 ```
