@@ -56,7 +56,7 @@ php artisan scribe:generate
 http://localhost:8000/docs
 ```
 
-## Importanto as cidades do estado
+## Importando as cidades do estado
 
 Para importar as cidades do estado para o banco de dados utilize o comando
 ```
