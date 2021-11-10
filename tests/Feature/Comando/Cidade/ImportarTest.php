@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Cidade;
+namespace Tests\Feature\Comando\Cidade;
 
 use Tests\TestCase;
 use Domain\Ibge\IbgeEndpoints;
@@ -15,6 +15,21 @@ class ImportarTest extends TestCase
     {
         $this->artisan('cidades:importar', ['estado' => self::ESTADO])
             ->expectsOutput('Importando cidades do estado '. self::ESTADO .'...')
+            ->expectsOutput('Cidades importadas com sucesso!')
+            ->assertSuccessful();
+
+        $this->assertDatabaseHas('cidades', [
+            'nome'           => 'Acaiaca',
+            'estado_sigla'   => 'MG',
+            'ibge_cidade_id' => 3100401,
+            'ibge_estado_id' => 31
+        ]);
+    }
+
+    public function test_cidades_sao_importadas_com_sucesso_comando_padrao()
+    {
+        $this->artisan('cidades:importar')
+            ->expectsOutput('Importando cidades do estado '. 'MG' .'...')
             ->expectsOutput('Cidades importadas com sucesso!')
             ->assertSuccessful();
 
